@@ -1,0 +1,228 @@
+Delivered-To: shaikhifza832@gmail.com
+Received: by 2002:a05:6a06:4485:b0:726:cdef:9b58 with SMTP id gj5csp15865pib;
+        Thu, 26 Jun 2025 20:32:06 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHr0PD85gZyis0Q7405+LqGAzju4swWbwniPGEggVkhxjLU5HLGYiaEKqB1FMrdkujHLuJy
+X-Received: by 2002:a05:620a:2729:b0:7d3:a7d9:1120 with SMTP id af79cd13be357-7d43bc15837mr834861485a.24.1750995126028;
+        Thu, 26 Jun 2025 20:32:06 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1750995126; cv=none;
+        d=google.com; s=arc-20240605;
+        b=jGulLFE2yjWqWDkSRjgKdDY6PwEn8ENqFCVIiuwLhsyvEbSzcGxQ6NQeXfl+zz/ZFZ
+         86u4aTFkmp17flJVCUuzIKFNZGo7y+CONwcPnU0vx7T/Ujppg66y6lYIcOkk+6ep18HW
+         1X0378OxXZOFQICTHC9pZwpyge5fawmda536I3kJbHwpztgpBq12cwmb9dCjv/FbZW2d
+         NWkSSzVrjppNk9k2BMmB+g8XmNVLNroCi96O95q9C9yrELHHZsuCgLpD45TqH0zo3/oX
+         DE3yz+MRVfPFZYdYywu793B82FmyX4xl+6AXu1Wtet8PXZ1u62qu49pgURNoC1o0tLsJ
+         Zp3A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:mime-version:date:from:message-id:subject
+         :content-transfer-encoding:dkim-signature:dkim-signature;
+        bh=C0SRZ2VIbZMwgK/e5D4h6CGmPBVhQ9VoFA8ihyXJF0c=;
+        fh=ze9CoSQOyIGjKKP6rzI8PNYHICIvc3/xf3AVSWKqv1M=;
+        b=M8SPvF/J05d+hIxteWSBgQbSFe/A+9U4jlpAtLD9g1+t+JsiQMJG3vSO8tRHiW1M+S
+         Gs3BeoPYDqiBnql57SwZ+XGpEzzADjjeXmOAJniEzLhSB9lXEntZtDDOaYvOThpBlDzs
+         fnHP/kCD5pjQF+Z/oxfnAJTSOxUZD4iVwuLhF2HERLUSjYn9VeV8bzZ2/qlRfqnL2J9G
+         v72/QUvYlypkxPTTmBoSzg91SSCwVFeNKacojAsi2YZYtT7YK6M0DtcsZS68/238yzuk
+         rxScYTz0zlA4sIvQZG9yOg5hzT+lVRoNndJQF/hjfGdw8WTNxZsogKGFz+9cZFR1tWG9
+         NM/Q==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@screenapp.io header.s=s1 header.b=Q3RVlYEE;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=K+K938yE;
+       spf=pass (google.com: domain of bounces+52627519-de08-shaikhifza832=gmail.com@em4074.screenapp.io designates 159.183.224.108 as permitted sender) smtp.mailfrom="bounces+52627519-de08-shaikhifza832=gmail.com@em4074.screenapp.io";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=screenapp.io
+Return-Path: <bounces+52627519-de08-shaikhifza832=gmail.com@em4074.screenapp.io>
+Received: from s.wfbtzhsc.outbound-mail.sendgrid.net (s.wfbtzhsc.outbound-mail.sendgrid.net. [159.183.224.108])
+        by mx.google.com with ESMTPS id af79cd13be357-7d44327f906si146058085a.492.2025.06.26.20.32.05
+        for <shaikhifza832@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 26 Jun 2025 20:32:05 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+52627519-de08-shaikhifza832=gmail.com@em4074.screenapp.io designates 159.183.224.108 as permitted sender) client-ip=159.183.224.108;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@screenapp.io header.s=s1 header.b=Q3RVlYEE;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=K+K938yE;
+       spf=pass (google.com: domain of bounces+52627519-de08-shaikhifza832=gmail.com@em4074.screenapp.io designates 159.183.224.108 as permitted sender) smtp.mailfrom="bounces+52627519-de08-shaikhifza832=gmail.com@em4074.screenapp.io";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=screenapp.io
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=screenapp.io;
+	h=content-type:content-transfer-encoding:subject:from:mime-version:to:
+	cc:content-type:feedback-id:from:subject:to;
+	s=s1; bh=C0SRZ2VIbZMwgK/e5D4h6CGmPBVhQ9VoFA8ihyXJF0c=;
+	b=Q3RVlYEEBe5Nn+WhoAtoMhg50BGaI7HHAYzq2uvKQLaOT65vbvoMltWKPS4CYlAi611k
+	k7TSScywj8MLumxkFWNMCVleME1ZwLl1iRclvX2U+k3xbzvuWA9Ji6Q4S/Ur8gIW/cAWQx
+	l/YEisScYe+kT++q9meQKJDgGtKaGQ+ZrMrAjm3IEig9cWFgg82JLR6P/4erB/sGhWylj0
+	5JnWNNa1Ha+JPmOSOCFnqSwfIVQcBYe9fpCnfnhqF3s3nkvbWfGiuQlD8I3/Napm4lAsiO
+	aLtqcCmwDMAd1vSL46vWWlFYNW2BpkCyh/FvwUWAShJ3bs3mOjyD1xSOzLqwBBZA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:content-transfer-encoding:subject:from:mime-version:to:
+	cc:content-type:feedback-id:from:subject:to;
+	s=smtpapi; bh=C0SRZ2VIbZMwgK/e5D4h6CGmPBVhQ9VoFA8ihyXJF0c=;
+	b=K+K938yEog+rjheiQpjguEXgvZAgPJEJDHgG+Ttx9eq1/hx2rj/+fR/9NvaqNj8EpGcK
+	FuRdf18jySJxAXHYaysA0BCryIMDtpIoPx3yvdAyXrkJdKHyj7JdVlWvRIeVbgYzh94mTj
+	ywaj0GJp3S4SH4QKK9xwekVP8FuUoeNG0=
+Received: by recvd-canary-56574d8977-8rxfg with SMTP id recvd-canary-56574d8977-8rxfg-1-685E10B3-34
+	2025-06-27 03:32:03.752391824 +0000 UTC m=+2003024.969965817
+Received: from localhost (unknown)
+	by geopod-ismtpd-5 (SG) with ESMTP
+	id SenjqDTcTpCvq-pM6ewXuw
+	for <shaikhifza832@gmail.com>;
+	Fri, 27 Jun 2025 03:32:03.703 +0000 (UTC)
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+Subject: Shaik shared a video with you: "New Recording 7:12pm Jun 26 2025"
+Message-Id: <1750995123715497677.1.5570270529769287450@listmonk-5dc66bdbd4-9ds4l>
+From: ScreenApp <hello@screenapp.io>
+Date: Fri, 27 Jun 2025 03:32:03 +0000 (UTC)
+Mime-Version: 1.0
+X-SG-EID: 
+ =?us-ascii?Q?u001=2EnFTY7XmAocspDoUlb6lIykOqVtU9J2zMr=2FYxEKs8vubjf2XOKKF1YfKWl?=
+ =?us-ascii?Q?nbIMvP69xKJRunlgiXQ8ymLVD6eHk1MFO9QzYkk?=
+ =?us-ascii?Q?5n2pQXwN0=2FeGewvNcnbHYJ+RaOfr9Ozdxqs6AyX?=
+ =?us-ascii?Q?G6tPR6+oKL=2F9gUhEhaRrxskpwiLWql78sa8bhFS?=
+ =?us-ascii?Q?WXOQAqBtMFZpUBQMwJ2+KvMhm7JcSRo=2FpFnUG6H?=
+ =?us-ascii?Q?5JzN8FsdJDgOH7fG0+1aaedlS2Oy9f6jMC1ACNJ?= =?us-ascii?Q?1ZIy?=
+To: shaikhifza832@gmail.com
+X-Entity-ID: u001.dHJnsBIKXNObtNqYJ2ledQ==
+
+<html lang=3D'en'>
+  <head>
+    <meta charset=3D'UTF-8' />
+    <meta http-equiv=3D'X-UA-Compatible' content=3D'IE=3Dedge' />
+    <meta name=3D'viewport' content=3D'width=3Ddevice-width, initial-scale=
+=3D1.0' />
+    <style>
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fv=
+QtMwCp50KnMa1ZL7.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C=
+6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2=
+212, U+2215, U+FEFF, U+FFFD;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #F9FAFB;
+        padding: 10%;
+        color: #363739;
+        line-height: 1.5;
+        margin: 0;
+      }
+      .container {
+        border-radius: 8px;
+        background-color: #FFFFFF;
+        padding: 3rem;
+        text-align: center;
+        box-shadow: 0px 2px 6px rgba(16, 24, 40, 0.03);
+      }
+      .spacer {
+        height: 3rem;
+      }
+      .button {
+        display: inline-block;
+        padding: 16px 32px;
+        text-decoration: none;
+        background-color: #1E90FF;
+        border-radius: 9999px;
+        color: #FFFFFF !important;
+        font-weight: 500;
+        font-size: 16px;
+        transition: background-color 0.2s ease;
+        margin: 24px 0;
+      }
+      .button:hover {
+        background-color: #0066CC;
+        color: #FFFFFF !important;
+        text-decoration: none;
+      }
+      .footer-text {
+        font-weight: 500;
+        font-size: 12px;
+        color: #363739;
+      }
+      a {
+        color: #1E90FF;
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+      a:hover {
+        color: #0066CC;
+      }
+      .social-icons {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 0.7rem;
+        color: #4B4D52;
+      }
+      .text-left {
+        text-align: left;
+        line-height: 200%;
+      }
+      .logo-container {
+        margin-bottom: 2rem;
+      }
+      .logo-container img {
+        border-radius: 12px;
+      }
+      .support-text {
+        text-align: center;
+        color: #4B4D52;
+        font-size: 0.75rem;
+        margin: 1.5rem 0;
+      }
+      .divider {
+        border: none;
+        border-top: 1px solid #F3F4F6;
+        margin: 2rem 0;
+      }
+    </style>
+    <title>ScreenApp</title>
+  </head>
+  <body>
+    <div class=3D'container'>
+      <div class=3D'logo-container'>
+        <a href=3D'https://screenapp.io' target=3D'_blank'>
+          <img src=3D"https://screenapp.io/app/assets/logo/Icon-180.png" al=
+t=3D"ScreenApp Logo" width=3D"90" height=3D"90">
+        </a>
+      </div>
+     =20
+      <p>Hi there,</p>
+      <p>Shaik has shared a video with you: <strong>New Recording 7:12pm Ju=
+n 26 2025</strong></p>
+      <p>Click below to watch it securely in your browser =E2=80=93 no acco=
+unt required.</p>
+      <div>
+        <a href=3D"https://screenapp.io/app/#/shared/ZqiZuMO30R" class=3D"b=
+utton">Watch Video</a>
+      </div>
+      <div>
+        <div>Alternatively, copy and paste this link in your browser:</div>
+        <a href=3D"https://screenapp.io/app/#/shared/ZqiZuMO30R">https://sc=
+reenapp.io/app/#/shared/ZqiZuMO30R</a>
+      </div>
+   =20
+    </div>
+    <div class=3D'support-text'>
+      <p style=3D"margin: 0">
+        <b>Not sure why you are receiving this?</b> Ask <a href=3D"mailto:s=
+upport@screenapp.io" target=3D"_blank">support@screenapp.io</a> for more in=
+formation.
+      </p>
+    </div>
+    <div class=3D'social-icons'>
+      <a href=3D'https://www.linkedin.com/company/screenapp' target=3D'_bla=
+nk'>LinkedIn</a> &nbsp;|&nbsp;
+      <a href=3D'https://www.tiktok.com/@screenapp' target=3D'_blank'>Tikto=
+k</a> &nbsp;|&nbsp;
+      <a href=3D'https://www.youtube.com/channel/UCZv2Qac3eS0WrUVkhUNedCw/v=
+ideos' target=3D'_blank'>YouTube</a>
+    </div>
+  <img src=3D"http://url9216.screenapp.io/wf/open?upn=3Du001.2HVvHxaisCe8nq=
+-2FqYCmcHgXaYHFuospt276Y3gqyQHFwlxo9KFVMqL4nN-2BNX3mhi9B6ysVYU-2B6fu0R7y-2B=
+8Xc9eYc8zr2CE6dygiKtAoHaNGjft8XLmWRlcjTUdmNrmxewI4RWJe2u8QeJDIiFKDuoYUiID2K=
+fRE7T43ZDzInUbvwd0Cuexxa-2B-2FN9-2FJDFd1F3poPbZTNqkQ66XWcB81BjnJdhMe09eBzue=
+QxFOnY0bhc-3D" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"heig=
+ht:1px !important;width:1px !important;border-width:0 !important;margin-top=
+:0 !important;margin-bottom:0 !important;margin-right:0 !important;margin-l=
+eft:0 !important;padding-top:0 !important;padding-bottom:0 !important;paddi=
+ng-right:0 !important;padding-left:0 !important;"/></body>
+</html>
